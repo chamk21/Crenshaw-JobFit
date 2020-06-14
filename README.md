@@ -1,6 +1,6 @@
 # Crenshaw-JobFit
-Manual assessment type application written for CITS3403 project 2 2020.
-This is a flask app mimicks online psychometric testing websites. The app can be used by clients to assess whether a candidate is worthy of progressing in their application for a job or just general testing of individuals.
+Manual assessment type application written for CITS3403 project 2, 2020.
+This is a flask app that mimicks online psychometric testing websites. The app can be used by clients to assess whether a candidate is worthy of progressing in their application for a job or just general testing of individuals.
 Users will be given tasks that they need to do complete. That data will get stored in a database and admin can assess that data. According to the data, they can give custom feedback to the user regarding their testing.
 
 ## Supported Features

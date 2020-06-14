@@ -47,11 +47,14 @@ User has answer options:
 - make sure latest version of python is installed. You can check for this by typing "python3 --version" in your terminal. if nothing comes up it means you havent installed it. Therefore you need to download it externally.
 - Change your working directory to desktop in your terminal.
 - Type "mkdir crenshaw" and press enter
-- Type "cd crenshaw"
+- Type "cd crenshaw" and press enter
 - Then type "git clone https://github.com/chamk21/Crenshaw-JobFit.git"
+- Type "cd Crenshaw-JobFit"
 - python3 -m venv venv
+- source venv/bin/activate
 - pip3 install -r requirements.txt
 - export FLASK_APP=quiz.py
+- flask run
   
 ## Current User Accounts
 - Admin account with username "Admin" and password "Admin123"

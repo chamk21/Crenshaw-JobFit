@@ -1,0 +1,10 @@
+{% extends "base_base.html" %} {% block content %} {% for f in feedback %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+
+<form class='swaz' action=''>
+    <h1>Feedback For Me</h1>
+    <h2>{{f.title}}</h2>
+    <p><b style='color:orange'>Feedback: </b>{{f.content}}</p>
+    <p><b style='color:orange'>Feedback posted at: </b>{{f.timestamp}}</p>
+</form>
+{%endfor%} {% endblock %}

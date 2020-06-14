@@ -1,0 +1,8 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+<h1>Add Questions to Set</h1>
+<form action='/add_set/add_questions_to_set/{{specific_set.id}}' method='POST' class='boxes'>
+    Questions Name:<input type='text' name='name' id='name'><br> Set Name:<input type='text' name='set' id='set' value='{{specific_set.set_name}}'> <br> Set Time Limit(seconds):<input type='number' name='timelimit' id='timelimit'>
+    <input type='submit' value='Post Question to set'>
+</form>
+{%endblock%}

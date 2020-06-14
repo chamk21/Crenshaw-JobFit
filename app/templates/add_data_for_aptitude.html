@@ -1,0 +1,30 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+<h1>Post Data for Emotional Intelligence Test</h1>
+<form action='/add_data_for_aptitude' method='POST' class='boxadd'>
+    Question:<input type='text' name='question' id='question'>
+    <br> Option1:
+    <input type='text' name='option1' id='option1'>
+    <br> Option2:
+    <input type='text' name='option2' id='option2'>
+    <br> Option3:
+    <input type='text' name='option3' id='option3'>
+    <br> Option4:
+    <input type='text' name='option4' id='option4'>
+    <br> Option5:
+    <input type='text' name='option5' id='option5'>
+    <br>
+    <input type='submit' value='Submit' id='submit'>
+
+</form>
+<form class='rega' action=''><br>
+    <br> {% for i in apt %}
+    <h1 id='addedaptq'><b style="color:red">Question:</b> {{i.question}}</h1>
+    <p id='option1'>{{i.option_one}}</p>
+    <p id='option2'>{{i.option_two}}</p>
+    <p id='option3'>{{i.option_three}}</p>
+    <p id='option4'>{{i.option_four}}</p>
+    <p id='option5'>{{i.option_five}}</p>
+    <a href='/add_data_for_aptitude/delete_apt_question/{{i.id}}' class='rege'>Delete Question</a>
+    <a href='/add_data_for_aptitude/edit_apt_question/{{i.id}}' class='rege'>Edit Question</a> {% endfor %} {% endblock %}
+</form>

@@ -1,0 +1,77 @@
+2020-05-15 19:18:36,808 ERROR: Exception on /view_answered/delete_answers/3 [GET] [in /Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2012, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'BaseQuery' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/cham/Desktop/webproj2/webproj2/app/routes.py", line 132, in delete_answers
+    db.session.delete(answered_question)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2014, in delete
+    util.raise_(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'flask_sqlalchemy.BaseQuery' is not mapped
+2020-05-15 19:19:48,677 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 21:00:59,429 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 21:01:39,432 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 21:02:38,836 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 21:03:50,674 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 21:04:48,519 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 21:05:56,747 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 21:06:54,438 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 21:08:31,098 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 21:08:35,568 ERROR: Exception on /view_all_answers_for_admin [GET] [in /Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/cham/Desktop/webproj2/webproj2/app/routes.py", line 193, in view_all_answers_for_admin
+    return redirect(url_for('accessdenied'))
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'accessdenied'. Did you mean 'delete' instead?
+2020-05-15 21:10:11,579 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-16 00:13:12,506 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-23 12:10:55,546 INFO: quiz startup [in /Users/cham/Desktop/cleanversion/webproj2/app/__init__.py:43]
+2020-05-23 12:11:00,250 INFO: quiz startup [in /Users/cham/Desktop/cleanversion/webproj2/app/__init__.py:43]
+2020-05-23 12:11:03,833 INFO: quiz startup [in /Users/cham/Desktop/cleanversion/webproj2/app/__init__.py:43]
+2020-05-24 19:28:19,840 INFO: quiz startup [in /Users/cham/Desktop/cleanversion/webproj2/app/__init__.py:47]
+2020-05-24 20:20:59,492 INFO: quiz startup [in /Users/cham/Desktop/cleanversion/webproj2/app/__init__.py:47]

@@ -1,0 +1,16 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+
+<h1>Edit Data for aptiude test</h1>
+<form action='/add_data_for_verbreason/edit_verbreason_question/{{data.id}}' method='POST' class='box'>
+    Question:<input type='text' name='question' id='question' value='{{data.question}}'>
+    <br> Option1:
+    <input type='text' name='option1' id='option1' value='{{data.option_one}}'>
+    <br> Option2:
+    <input type='text' name='option2' id='option2' value='{{data.option_two}}'>
+    <br> Option3:
+    <input type='text' name='option3' id='option3' value='{{data.option_three}}'>
+    <br>
+    <input type='submit' value='Update Data'>
+</form>
+{%endblock%}

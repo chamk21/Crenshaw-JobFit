@@ -1,0 +1,42 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+
+<form action='/add_tasks_individuals' method='POST' class='boxadd'>
+    Task Title: <input type='text' name='title' id='title' autocomplete="off"><br> Side Notes:<input type='text' name='sidenotes' id='sidenotes'> <br>Task Due date:<input type='text' name='duedate' id='duedate'><br>
+    <label>Tasks For:<input list="user" name="user" autocomplete="off" id='user'><br>
+        </label>
+    <datalist>
+        {%for user in users%}
+        <option value='{{user.username}}'>
+        {%endfor%}
+        </datalist>
+    <label>Tasks Set:<input list="set" name="set" id='set'></label>
+    <datalist>
+        {%for s in sets%}
+        <option value='{{s.set_name}}'>
+        {%endfor%}
+        </datalist>
+    <input type="submit" value="Add Task" id='submit'>
+
+</form>
+<form class='regasy' action=''>
+
+    <h2>Tasks Added</h2><br> {%for task in tasks%}
+    <table id='myTables'>
+        <tr class='headers'>
+            <th>Task For</th>
+            <th>Set to do</th>
+            <th>Instructions</th>
+            <th>Date to be completed by</th>
+        </tr>
+        <tr>
+            <td>{{task.task_for}}</td>
+            <td>{{task.task_set}}</td>
+            <td>{{task.side_notes}}</td>
+            <td>{{task.task_completed_by_date}}</td>
+        </tr>
+        <a class="reger" href='/add_tasks_individuals/delete_task/{{task.id}}'>Delete Task</a>
+    </table><br>
+
+</form>
+{%endfor%} {% endblock %}

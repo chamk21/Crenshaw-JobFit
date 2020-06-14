@@ -1,0 +1,10 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}"> {% for t in tasks %}
+<form class='swaz' action=''>
+    <h1 style="color: orange;">Please find the relevant questions and complete them</h1><br>
+
+    <p><b style="color: orange;">Instructions:</b> {{t.side_notes}}</p><br>
+    <p><b style="color: orange;">Date to be completed by:</b> {{t.task_completed_by_date}}</p><br>
+    <p><b style="color: orange;">Task posted at:</b> {{t.task_posted_at}}</p>
+</form>
+{% endfor %} {% endblock %}

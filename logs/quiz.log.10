@@ -1,0 +1,104 @@
+2020-05-15 14:39:44,953 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 14:39:47,488 ERROR: Exception on /question_sets/answer_question/1 [GET] [in /Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/cham/Desktop/webproj2/webproj2/app/routes.py", line 120, in answer_question
+    return render_template('answer_question.html',answer=answer)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/cham/Desktop/webproj2/webproj2/app/templates/answer_question.html", line 1, in top-level template code
+    {% extends "base.html" %} {% block content %}
+  File "/Users/cham/Desktop/webproj2/webproj2/app/templates/base.html", line 30, in top-level template code
+    {% endif %} {% endwith %} {% block content %}{% endblock %}
+  File "/Users/cham/Desktop/webproj2/webproj2/app/templates/answer_question.html", line 3, in block "content"
+    <form action='/question_sets/answer_question/{{question.id}}' method='POST'>
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'question' is undefined
+2020-05-15 14:40:45,723 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 14:42:23,625 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 14:43:03,334 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 14:51:05,158 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 14:51:38,797 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 14:51:41,483 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 14:53:29,099 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 15:08:56,696 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 15:09:04,236 ERROR: Exception on /question_sets/answer_question/1 [GET] [in /Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2020-05-15 15:09:31,840 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 15:17:58,239 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 15:23:52,668 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 15:23:55,034 ERROR: Exception on /question_sets [GET] [in /Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/cham/Desktop/webproj2/webproj2/app/routes.py", line 131, in question_sets
+    return render_template('question_sets.html',question=all_questions)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/cham/Desktop/webproj2/webproj2/app/templates/question_sets.html", line 1, in top-level template code
+    {% extends "base.html" %} {% block content %}
+  File "/Users/cham/Desktop/webproj2/webproj2/app/templates/base.html", line 22, in top-level template code
+    <a href="{{ url_for('answered_questions')}}">View Answered Questions</a>
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'answered_questions'. Did you mean 'answer_question' instead?
+2020-05-15 15:25:48,635 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]

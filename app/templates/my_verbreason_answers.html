@@ -1,0 +1,9 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+<form class='swaz'>
+    <h1>My Verbal reasoning answers</h1><br> {% for i in data %}
+    <p><b style='color:orange'>Question: {{i.verb_question}}</b></p><br>
+    <p><b style='color:orange'></b>Answer: {{i.verb_choice}}</b>
+    </p><br> {% endfor %}
+</form>
+{% endblock %}

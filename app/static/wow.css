@@ -1,0 +1,415 @@
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+:root {
+    --page-header-bgColor: #242e42;
+    --page-header-bgColor-hover: #1d2636;
+    --page-header-txtColor: #dde9f8;
+    --page-header-headingColor: #7889a4;
+    --page-header-width: 220px;
+    --page-content-bgColor: #191919;
+    --page-content-txtColor: #171616;
+    --page-content-blockColor: #fff;
+    --white: #fff;
+    --black: #333;
+    --blue: aquamarine;
+    --red: #ec1848;
+    --border-radius: 4px;
+    --box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.075);
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a,
+  button {
+    color: inherit;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  button {
+    background: none;
+    cursor: pointer;
+  }
+  
+  input {
+    -webkit-appearance: none;
+  }
+  
+  button,
+  input {
+    border: none;
+  }
+  
+  svg {
+    display: block;
+  }
+  
+  body {
+    font: 16px/1.5 'Comfortaa', cursive;
+    background: #191919;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+  }
+
+  
+  /* HEADER STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding-top: 20px;
+    width: var(--page-header-width);
+    color: var(--page-header-txtColor);
+    background: var(--page-header-bgColor);
+  }
+  
+  /*In case you prefer an absolutely positioned header that covers the full page height, add these styles*/
+  /*body {
+    position: relative;
+  }
+  
+  .page-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }*/
+  
+  /*remove these styles*/
+  /*.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+  }*/
+  
+  .page-header nav {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  
+  .page-header .logo {
+    display: block;
+    max-width: 120px;
+    margin: 0 15px;
+  }
+  
+  .page-header .toggle-mob-menu {
+    display: none;
+    margin-left: 5px;
+    padding: 4px;
+    background: var(--page-content-blockColor);
+    border-radius: var(--border-radius);
+  }
+  
+  .page-header .toggle-mob-menu svg {
+    fill: var(--black);
+    transition: transform 0.2s;
+  }
+  
+  .page-header .admin-menu {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 35px;
+  }
+  
+  .page-header .admin-menu li:nth-last-child(2) {
+    margin-bottom: 35px;
+  }
+  
+  .page-header .admin-menu li:last-child {
+    margin-top: auto;
+    margin-bottom: 20px;
+  }
+  
+  .page-header .admin-menu li > * {
+    width: 100%;
+    padding: 12px 15px;
+  }
+  
+  .page-header .admin-menu .menu-heading h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 12px;
+    margin-top: 12px;
+    color: var(--page-header-headingColor);
+  }
+  
+  .page-header .admin-menu svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--page-header-txtColor);
+    margin-right: 10px;
+    transition: fill 0.2s;
+  }
+  
+  .page-header .admin-menu a,
+  .page-header .admin-menu button {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .page-header .admin-menu a:hover,
+  .page-header .admin-menu a:focus,
+  .page-header .admin-menu button:hover,
+  .page-header .admin-menu button:focus {
+    background: var(--page-header-bgColor-hover);
+    color: var(--blue);
+    outline: none;
+  }
+  
+  .page-header .admin-menu a:hover svg,
+  .page-header .admin-menu a:focus svg,
+  .page-header .admin-menu button:hover svg,
+  .page-header .admin-menu button:focus svg {
+    fill: var(--blue);
+  }
+  
+  .page-header h1:hover{
+    color:aquamarine;
+    transition: 0.25s;
+  }
+    
+  
+  /* MQ RULES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  @media screen and (max-width: 767px) {
+    .page-header,
+    .page-content {
+      position: static;
+      width: 100%;
+    }
+     
+    .page-header {
+      padding: 10px;
+    }
+  
+    .page-header nav {
+      flex-direction: row;
+    }
+  
+    .page-header .logo {
+      margin: 0;
+      height: 35px;
+    }
+  
+    .page-header .toggle-mob-menu {
+      display: block;
+    }
+  
+    .page-header .admin-menu {
+      position: absolute;
+      left: 98px;
+      top: 57px;
+      margin-top: 0;
+      z-index: 2;
+      border-radius: var(--border-radius);
+      background: var(--page-header-bgColor);
+      visibility: hidden;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: all 0.2s;
+    }
+  
+    .page-header .admin-menu li:nth-last-child(2) {
+      margin-bottom: 12px;
+    }
+    
+    .page-header .admin-menu li:last-child,
+    .search-and-user .admin-profile .greeting {
+      display: none;
+    }
+    
+    .page-content {
+      min-height: 0;
+      padding: 10px;
+    }
+  
+    .page-content .grid {
+      grid-gap: 10px;
+    }
+  
+    .search-and-user {
+      position: absolute;
+      right: 131px;
+      top: 10px;
+      padding: 0;
+      grid-column-gap: 5px;
+      width: calc(100% - 141px);
+      border-radius: var(--border-radius);
+      background: transparent;
+    }
+  
+    .search-and-user input[type="search"] {
+      font-size: 1rem;
+      height: 35px;
+    }
+  
+    .search-and-user form svg {
+      width: 18px;
+      height: 18px;
+    }
+  
+    .search-and-user .admin-profile svg {
+      fill: var(--white);
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .page-content .grid > article {
+      grid-column: 1 / -1;
+    }
+  }
+  
+  
+  /* BODY CLASSES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .mob-menu-opened .toggle-mob-menu svg {
+    transform: rotate(180deg);
+  }
+  
+  .mob-menu-opened .page-header .admin-menu {
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .collapsed .page-header {
+      width: 40px;
+    }
+  
+    .collapsed .page-header .admin-menu li > * {
+      padding: 10px;
+    }
+  
+    .collapsed .page-header .logo,
+    .collapsed .page-header .admin-menu span,
+    .collapsed .page-header .admin-menu .menu-heading {
+      display: none;
+    }
+  
+    .collapsed .page-header .admin-menu svg {
+      margin-right: 0;
+    }
+  
+    .collapsed .page-header .collapse-btn svg {
+      transform: rotate(180deg);
+    }
+  
+    .collapsed .page-content {
+      left: 40px;
+      width: calc(100% - 40px);
+    }
+  }
+  
+  
+  /* FOOTER
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .page-footer {
+    font-size: 0.85rem;
+    text-align: right;
+    margin-top: 10px;
+  }
+  
+  .page-footer span {
+    color: var(--red);
+  }
+
+  .middle{
+    position: absolute;
+    top: 10%;
+    right:-200px;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+  }
+
+  .middles{
+    position: absolute;
+    top: 20%;  
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+  }
+  .btn{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: navy;
+    margin: 10px;
+    border-radius: 30%;
+    box-shadow: 0 5px 15px -5px #00000070;
+    color: #3498db;
+    overflow: hidden;
+    position: relative;
+  }
+  .btn i{
+    line-height: 60px;
+    font-size: 26px;
+    transition: 0.2s linear;
+  }
+  .btn:hover i{
+    transform: scale(1.3);
+    color: #f1f1f1;
+  }
+  .btn::before{
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: #3498db;
+    transform: rotate(45deg);
+    left: -110%;
+    top: 90%;
+  }
+  .btn:hover::before{
+    animation: aaa 0.7s 1;
+    top: -10%;
+    left: -10%;
+  }
+  @keyframes aaa {
+    0%{
+      left: -110%;
+      top: 90%;
+    }50%{
+      left: 10%;
+      top: -30%;
+    }100%{
+      top: -10%;
+      left: -10%;
+    }
+  }
+

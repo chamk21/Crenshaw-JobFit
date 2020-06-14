@@ -1,0 +1,50 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+<form class='boxes' action='/view_set_questions/answer_q_of_set/{{question.id}}' method='POST' id='answer'>
+    <h1>{{question.quiz_name}}</h1>
+    Question Answer:<input type='text' name='answer' id='answer'>
+    <br>
+    <input type='hidden' id='timelimit' value="{{question.time_limit}}">
+    <div><span id="display" style="color:#FF0000;font-size:15px"></span></div>
+    <div><span id="submitted" style="color:#FF0000;font-size:15px"></span></div>
+    <input type='submit' value='Submit'>
+</form>
+
+<script>
+    var div = document.getElementById('display');
+    var submitted = document.getElementById('submitted');
+    var timelimit = document.getElementById('timelimit').value;
+
+    function CountDown(duration, display) {
+
+        var timer = duration,
+            minutes, seconds;
+
+        var interVal = setInterval(function() {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            display.innerHTML = "<b>" + minutes + "m : " + seconds + "s" + "</b>";
+            if (timer > 0) {
+                --timer;
+            } else {
+                clearInterval(interVal)
+                SubmitFunction();
+            }
+
+        }, 1000);
+
+    }
+
+    function SubmitFunction() {
+
+        submitted.innerHTML = "Time is up!";
+        document.getElementById('answer').submit();
+
+    }
+    CountDown(timelimit, div);
+</script>
+
+{%endblock%}

@@ -1,0 +1,24 @@
+{% extends "base_aga.html" %} {% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+<form action="" class='box' method="post" novalidate class='box'>
+    <h1>LogIn</h1>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.username.label }}<br> {{ form.username(size=32) }} {% for error in form.username.errors%}
+        <span style="color: red;">[{{error}}]</span> {%endfor%}
+    </p>
+    <p>
+        {{ form.password.label }}<br> {{ form.password(size=32) }} {% for error in form.password.errors %}
+        <span style="color: red;">[{{ error }}]</span> {% endfor %}
+    </p>
+    <p> {{ form.remember_me() }} {{ form.remember_me.label }}</p>
+
+    <p>{{ form.submit() }}</p>
+    <p>New User? <a href="{{ url_for('register') }}" target='_blank' class="reg">Click Here To Register!</a></p>
+
+</form>
+
+
+
+{% endblock %}

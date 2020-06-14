@@ -1,0 +1,71 @@
+2020-05-24 23:32:38,906 ERROR: Exception on /add_tasks_individuals [POST] [in /Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1247, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1948, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 2242, in preprocess_request
+    rv = func()
+  File "/Users/cham/Desktop/cleanversion/webproj2/app/routes.py", line 382, in before_request
+    db.session.commit()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 503, in commit
+    self._prepare_impl()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2496, in flush
+    self._flush(objects)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2637, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2597, in _flush
+    flush_context.execute()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 586, in execute
+    persistence.save_obj(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 230, in save_obj
+    _emit_update_statements(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 994, in _emit_update_statements
+    c = cached_connections[connection].execute(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 984, in execute
+    return meth(self, multiparams, params)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1097, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1287, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1481, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1247, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked
+[SQL: UPDATE user SET last_seen=? WHERE user.id = ?]
+[parameters: ('2020-05-24 15:32:33.776896', 1)]
+(Background on this error at: http://sqlalche.me/e/e3q8)

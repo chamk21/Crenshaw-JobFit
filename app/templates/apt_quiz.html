@@ -1,0 +1,6 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+<p>You can only answer a question once</p>
+<br> {% for i in apt %}
+<h1>Question:{{i.question}}</h1>
+<a href='/apt_quiz/answer_apt_q/{{i.id}}' class='rege'>Answer question</a> {% endfor %} {% endblock %}

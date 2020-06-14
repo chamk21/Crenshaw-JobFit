@@ -1,0 +1,21 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+<h1>Add Set</h1>
+<form action='/add_set' method='POST' class='boxadd'>
+    Set Name:<input type='text' name='name' id='name'>
+    <br> Set about:<input type='text' name='about' id='about'><br>
+    <input type='submit' value='Post Module' id='submit'>
+</form>
+
+<form class='rega' action=''>
+    {% for s in sets %}
+
+    <h1>{{s.set_name}}</h1><br>
+    <p>{{s.set_about}}</p>
+    <a class='regs' href='/add_set/add_questions_to_set/{{s.id}}'>Add questions to this set</a>
+    <a class='regs' href='/add_set/view_set_questions/{{s.id}}'>View Questions of this set</a>
+    <a class='regs' href='/add_set/delete_set/{{s.id}}'>Delete this set</a>
+    <a class='regs' href='/add_set/edit_set/{{s.id}}'>Edit Set info</a><br> {%endfor%}
+</form>
+
+{%endblock%}

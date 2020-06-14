@@ -1,0 +1,14 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+
+
+<form action='/view_set_questions/edit_q_of_set/{{quiz.id}}' method='POST' class='boxes'>
+    <h1>Edit Question Info</h1>
+    Name:<input type='text' name='name' id='name' value='{{quiz.quiz_name}}'>
+    <br> TimeLimit:
+    <input type='number' name='timelimit' id='timelimit' value='{{quiz.time_limit}}'>
+    <br>
+    <input type='submit' value='Update Questions'>
+</form>
+
+{%endblock%}

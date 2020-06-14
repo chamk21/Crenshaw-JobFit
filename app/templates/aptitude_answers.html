@@ -1,0 +1,45 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+<H1>Results for emotional intelligence questions</H1>
+
+<input style="float: right;" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for users..." title="Type in a name">
+<table id='myTable'>
+    <tr class="header">
+        <th>Username</th>
+        <th>Question Name</th>
+        <th>Answer</th>
+        <th>Action</th>
+
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.apt_answered_by}}</td>
+        <td>{{d.apt_question}}</td>
+        <td>{{d.apt_choice}}</td>
+        <td><a class='regger' href='/aptitude_answers/delete_apt_answer/{{d.id}}'>Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+
+{% endblock %}

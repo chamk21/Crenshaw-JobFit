@@ -1,0 +1,47 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+
+<h1>Create Feedback</h1>
+<form action='/add_feedback' method='POST' class='boxadd'>
+    Title:<input type='text' name='title' id='title' autocomplete='off'>
+    <br> Content:<input type='text' name='content' id='content' autocomplete='off'>
+    <br>
+
+    <label>Feedback For:<input list="user" name="user" id='user' autocomplete="off"><br>
+    </label>
+    <datalist>
+    {%for user in users%}
+    <option value='{{user.username}}'>
+    {%endfor%}
+    </datalist>
+    <br>
+
+    <label>Tasks Set:<input list="set" id="set" name="set"></label>
+    <datalist>
+    {%for s in sets%}
+    <option value='{{s.set_name}}'>
+    {%endfor%}
+    </datalist>
+    <input type='submit' value='Submit' id='submit'>
+</form>
+<form class='regasy' action=''>
+    {%for f in feedback %}
+    <table id='myTables'>
+        <tr class='headers'>
+            <th>{{f.title}}</th>
+            <th>Feedback regarding:</th>
+            <th>Feedback</th>
+            <th>User</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>{{f.setname}} Set</td>
+            <td>{{f.content}}</td>
+            <td>{{f.feedback_for}}</td>
+            <td>
+                <a class='regger' href='/add_feedback/delete_feedback/{{f.id}}'></a>Delete</td>
+        </tr>
+
+    </table><br> {%endfor%} {% endblock %}
+</form>

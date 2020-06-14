@@ -1,0 +1,56 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+
+
+<h2>All Results</h2>
+<p>Enter a users name below to search for their results</p>
+
+<input style="float: right;" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for users..." title="Type in a name">
+
+<table id='myTable'>
+    <tr class="header">
+        <th style="width:20%;">Username</th>
+        <th style="width:16%;">Question Name</th>
+        <th style="width:5%;">Set Name</th>
+        <th style="width:20%;">Time answered</th>
+        <th>Solution</th>
+        <th>Action</th>
+
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.problem_answered_by}}</td>
+        <td>{{d.problemname}}</td>
+        <td>{{d.setname}}</td>
+        <td>{{d.solutionaddedtime}}</td>
+        <td>{{d.Solution}} </td>
+        <td>
+            <a class='regger' href='/view_all_answers_for_admin/delete_all_answers/{{d.id}}'>Delete answer</a>
+        </td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+{% endblock %}

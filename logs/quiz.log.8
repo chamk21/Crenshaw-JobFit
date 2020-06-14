@@ -1,0 +1,115 @@
+2020-05-15 18:21:28,592 ERROR: Exception on /question_sets/answer_question/1 [POST] [in /Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1247, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 2 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/cham/Desktop/webproj2/webproj2/app/routes.py", line 116, in answer_question
+    db.session.commit()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 503, in commit
+    self._prepare_impl()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2496, in flush
+    self._flush(objects)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2637, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2597, in _flush
+    flush_context.execute()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 586, in execute
+    persistence.save_obj(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 239, in save_obj
+    _emit_insert_statements(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1135, in _emit_insert_statements
+    result = cached_connections[connection].execute(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 984, in execute
+    return meth(self, multiparams, params)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1097, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1287, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1481, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1247, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 2 - probably unsupported type.
+[SQL: INSERT INTO answer (timestamp, answer, question_id, answered_by) VALUES (?, ?, ?, ?)]
+[parameters: ('2020-05-15 10:21:28.591517', 'chris johnson', <Question 1>, 'Jaxon')]
+(Background on this error at: http://sqlalche.me/e/rvf5)
+2020-05-15 18:28:25,775 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 18:28:43,897 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 18:35:18,983 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 18:37:03,593 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 18:38:55,814 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 18:39:32,360 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 18:48:23,121 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 18:52:14,971 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 18:55:48,627 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 18:56:19,132 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 18:57:59,492 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 18:58:50,564 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:00:42,951 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:01:00,619 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:02:33,237 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:02:34,983 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:02:51,874 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:03:26,682 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:03:53,196 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:05:42,946 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:07:34,761 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:08:12,283 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:08:33,353 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:17:51,712 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]
+2020-05-15 19:17:56,648 ERROR: Exception on /view_answered/delete_answers/3 [GET] [in /Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/cham/Desktop/webproj2/faze/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+TypeError: delete_answers() got an unexpected keyword argument 'id'
+2020-05-15 19:18:30,493 INFO: quiz startup [in /Users/cham/Desktop/webproj2/webproj2/app/__init__.py:43]

@@ -1,0 +1,7 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+<h1>My Aptitude answers</h1>
+{%for apt in data%}
+<h2>Question:<b style='color:orange;'>{{apt.apt_question}}</b> </h2>
+<h2>Chosen Answer:<b style='color:orange;'>  {{apt.apt_choice}}</b> </h2>
+{% endfor %} {% endblock %}

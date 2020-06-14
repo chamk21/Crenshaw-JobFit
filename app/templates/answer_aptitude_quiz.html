@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+
+<form method='POST' action='/apt_quiz/answer_apt_q/{{question.id}}' class='boxes'>
+    {{ form.hidden_tag() }} {{form.question.label}} {{form.question}}
+    <input type='Submit'>
+
+    <h1>Only your first answer will be recorded and assessed.</h1>
+</form>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+
+<h1>Post Data for Verbal reasoning</h1>
+<form action='/add_data_for_verbreason' method='POST' class='boxadd'>
+    Question:<input type='text' name='question' id='question'>
+    <br> Option1:
+    <input type='text' name='option1' id='option1'>
+    <br> Option2:
+    <input type='text' name='option2' id='option2'>
+    <br> Option3:
+    <input type='text' name='option3' id='option3'><br> Time Limit(seconds):
+    <input type='number' name='timelimit' id='timelimit'>
+    <input type='submit' value='Submit' id='submit'>
+
+</form>
+<form class='rega'>
+    <br> {% for i in verb %}
+    <h3 id='addedaptq'>Question: {{i.question}}</h3>
+    <p id='option1' style='color:orange'>Optional Answers</p>
+    <p id='option1'>{{i.option_one}}</p>
+    <p id='option2'>{{i.option_two}}</p>
+    <p id='option3'>{{i.option_three}}</p>
+    <p id='timelimit'>{{i.time_limit}}</p>
+    <a class='rege' href='/add_data_for_verbreason/delete_verbreason_question/{{i.id}}'>Delete Question</a>
+    <a class='rege' href='/add_data_for_verbreason/edit_verbreason_question/{{i.id}}'>Edit Question</a><br> {% endfor %} {% endblock %}
+</form>

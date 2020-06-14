@@ -1,0 +1,10 @@
+{% extends "base_base.html" %} {% block content %} {% for p in problems %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+<form class='regas' action=''>
+    <h1>{{p.quiz_name}}</h1>
+    <a class='rege' href='/view_set_questions/delete_q_of_set/{{p.id}}'>Delete Question</a>
+    <a class='rege' href='/view_set_questions/answer_q_of_set/{{p.id}}'>Answer Question</a>
+    <a class='rege' href='/view_set_questions/edit_q_of_set/{{p.id}}'>Edit question</a> {%endfor%}
+</form>
+
+{%endblock%}

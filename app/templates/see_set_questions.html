@@ -1,0 +1,7 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+
+<h1 style='color:orange'>Questions in this set</h1>
+{%for p in problems%}
+<h1>{{p.quiz_name}}</h1>
+<a class='regger' href='/see_set_questions/answer_set_question/{{p.id}}'>Answer Question</a> {%endfor%} {%endblock%}

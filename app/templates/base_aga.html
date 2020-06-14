@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"> {% if title %}
+    <title>{{ title }} - Crenshaw Assessments</title>
+    {% else %}
+    <title>Welcome to Crenshaw Assessments</title>
+    {% endif %}
+
+</head>
+
+<body>
+
+    <div class="middle">
+        <a class="btn" href="{{ url_for('index') }}">
+            <i class="fas fa-home"></i>
+        </a>
+        <a class="btn" href="#">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a class="btn" href="https://teaching.csse.uwa.edu.au/units/CITS3403/index.php">
+            <i class="fab fa-google"></i>
+        </a>
+        <a class="btn" href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a class="btn" href="https://www.youtube.com/watch?v=dHvN09pxRqc">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+
+
+
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %} {% endwith %} {% block content %}{% endblock %}
+
+</body>
+
+</html>

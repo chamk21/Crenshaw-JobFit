@@ -1,0 +1,48 @@
+{% extends "base_base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+<h2>All Users in system</h2>
+
+<input style="float: right;" type="text" id="myInput" onkeyup="myFunction()" placeholder="Enter Username" title="Type in a name">
+<table id='myTable'>
+
+    <tr class="header">
+        <th>Username</th>
+        <th>Email</th>
+        <th>About User</th>
+        <th>Last Seen</th>
+        <th>Remove User</th>
+    </tr>
+    {% for individual_users in users %}
+    <tr>
+
+        <td>{{individual_users.username}}</td>
+        <td>{{individual_users.email}}</td>
+        <td>{{individual_users.about_me}}</td>
+        <td>{{individual_users.last_seen}}</td>
+        <td><a class='regger' href='/manage_users/delete_user/{{individual_users.id}}'>Delete User</a></td>
+    </tr>
+    {%endfor%}
+</table>
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+<p>If you want to add a user: <a class="rege" target="_blank" href="{{ url_for('register') }}">click here and register a user</a></p>
+{% endblock %}

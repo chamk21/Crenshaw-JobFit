@@ -75,4 +75,7 @@ User has answer options:
 
 - NavBar Theme:https://webdesign.tutsplus.com/tutorials/building-an-admin-dashboard-layout-with-css-and-a-touch-of-javascript--cms-33964?fbclid=IwAR1LiHoKpnYzWorLAFhZVMGCATX9NM6t8ABAFnzJASfv1awzdnZ-nW7Z2TE
 
+## Demo
+- If you would like a demonstration of the site, please download the video file titled "admin-demo" and open it using a video player of your choice.
+
 
